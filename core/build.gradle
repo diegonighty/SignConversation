@@ -1,0 +1,18 @@
+dependencies {
+	implementation(project(":api"))
+}
+
+subprojects {
+	repositories {
+		maven { url ("https://repo.codemc.io/repository/nms/") }
+	}
+
+	dependencies {
+		implementation(project(":api"))
+		implementation(project(":core"))
+	}
+}
+
+dependencies {
+	compileOnly("io.netty:netty-all:4.1.69.Final")
+}

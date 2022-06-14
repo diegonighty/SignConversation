@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+}
+
+group 'com.github.diegonighty'
+version '1.0-SNAPSHOT'
+
+allprojects {
+    plugins.apply("java")
+
+    repositories {
+        mavenCentral()
+
+        maven { url("https://libraries.minecraft.net/") }
+        maven { url("https://oss.sonatype.org/content/repositories/snapshots/") }
+        maven { url("https://hub.spigotmc.org/nexus/content/repositories/snapshots/") }
+    }
+
+    dependencies {
+        //spigot
+        compileOnly("org.spigotmc:spigot-api:1.16.1-R0.1-SNAPSHOT")
+        compileOnly("com.mojang:authlib:1.5.21")
+    }
+}
