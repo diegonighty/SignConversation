@@ -1,6 +1,6 @@
 package com.github.diegonighty.sign.core;
 
-import com.github.diegonighty.sign.api.gui.SignGUIService;
+import com.github.diegonighty.sign.api.conversation.ConversationHandler;
 import org.bukkit.Bukkit;
 
 import java.util.regex.Pattern;
@@ -15,12 +15,12 @@ public class SignServiceFactory {
 	private static final String VERSION = Bukkit.getServer().getClass().getName()
 			.split(Pattern.quote("."))[3];
 
-	public static SignGUIService create() {
+	public static ConversationHandler create() {
 		String className = FORMAT.replace("%%VERSION%%", VERSION);
 
 		try {
 			Class<?> clazz = Class.forName(className);
-			return (SignGUIService) clazz.getDeclaredConstructor().newInstance();
+			return (ConversationHandler) clazz.getDeclaredConstructor().newInstance();
 		} catch (ReflectiveOperationException e) {
 			throw notSupported();
 		}

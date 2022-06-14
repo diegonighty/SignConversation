@@ -1,6 +1,5 @@
 package com.github.diegonighty.sign.core.v1_18_R1;
 
-import com.github.diegonighty.sign.api.gui.SignConversation;
 import com.github.diegonighty.sign.core.AbstractSignService;
 import com.github.diegonighty.sign.core.packet.PacketChannelDuplexHandler;
 import net.minecraft.core.BlockPosition;
@@ -11,7 +10,7 @@ import org.bukkit.Location;
 import org.bukkit.craftbukkit.v1_18_R1.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 
-public class SignGUIService_v1_18_R1 extends AbstractSignService {
+public class ConversationHandler_v1_18_R1 extends AbstractSignService {
 
 	@Override
 	protected void addInterceptors() {

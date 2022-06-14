@@ -1,6 +1,6 @@
 package com.github.diegonighty.sign.core.v1_17_R1;
 
-import com.github.diegonighty.sign.api.gui.SignConversation;
+import com.github.diegonighty.sign.api.conversation.SignConversation;
 import com.github.diegonighty.sign.core.AbstractSignService;
 import com.github.diegonighty.sign.core.packet.PacketInterceptor;
 import net.minecraft.network.protocol.game.PacketPlayInUpdateSign;

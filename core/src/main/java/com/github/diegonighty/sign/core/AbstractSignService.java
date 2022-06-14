@@ -1,8 +1,7 @@
 package com.github.diegonighty.sign.core;
 
-import com.github.diegonighty.sign.api.gui.SignConversation;
-import com.github.diegonighty.sign.api.gui.SignGUIService;
-import com.github.diegonighty.sign.core.packet.PacketChannelDuplexHandler;
+import com.github.diegonighty.sign.api.conversation.SignConversation;
+import com.github.diegonighty.sign.api.conversation.ConversationHandler;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -14,7 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-public abstract class AbstractSignService implements SignGUIService {
+public abstract class AbstractSignService implements ConversationHandler {
 
 	protected final static String CHANNEL = "sign-conversations";
 	private final Map<UUID, SignConversation> conversations = new HashMap<>();
@@ -60,5 +59,7 @@ public abstract class AbstractSignService implements SignGUIService {
 	protected abstract void openFakeSign(Player player, Location location);
 
 	protected abstract void addInterceptors();
+
+	protected abstract void injectPlayer(Player player);
 
 }

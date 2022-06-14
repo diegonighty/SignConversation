@@ -1,6 +1,5 @@
-package com.github.diegonighty.sign.api.gui;
+package com.github.diegonighty.sign.api.conversation;
 
-import com.github.diegonighty.sign.api.conversation.ConversationCompleteCallback;
 import com.google.common.base.Preconditions;
 
 import java.util.ArrayList;

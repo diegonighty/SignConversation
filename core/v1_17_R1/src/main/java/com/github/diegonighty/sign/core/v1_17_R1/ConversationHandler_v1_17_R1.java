@@ -10,7 +10,7 @@ import org.bukkit.Location;
 import org.bukkit.craftbukkit.v1_17_R1.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 
-public class SignGUIService_v1_17_R1 extends AbstractSignService {
+public class ConversationHandler_v1_17_R1 extends AbstractSignService {
 
 	@Override
 	protected void addInterceptors() {

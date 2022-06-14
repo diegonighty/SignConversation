@@ -9,4 +9,11 @@ public class Responses {
 		return HumanEntity::closeInventory;
 	}
 
+	public static ConversationResponse closeWithMessage(String message) {
+		return player -> {
+			player.closeInventory();
+			player.sendMessage(message);
+		};
+	}
+
 }
