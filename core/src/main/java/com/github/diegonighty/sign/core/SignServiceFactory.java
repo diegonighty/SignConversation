@@ -10,7 +10,7 @@ public class SignServiceFactory {
 	private static final String FORMAT = SignServiceFactory.class
 			.getPackage()
 			.getName()
-			.concat(".%%VERSION%%.SignGUIService_%%VERSION%%");
+			.concat(".%%VERSION%%.ConversationHandler_%%VERSION%%");
 
 	private static final String VERSION = Bukkit.getServer().getClass().getName()
 			.split(Pattern.quote("."))[3];
@@ -22,12 +22,12 @@ public class SignServiceFactory {
 			Class<?> clazz = Class.forName(className);
 			return (ConversationHandler) clazz.getDeclaredConstructor().newInstance();
 		} catch (ReflectiveOperationException e) {
-			throw notSupported();
+			throw notSupported(className);
 		}
 	}
 
-	private static IllegalStateException notSupported() {
-		return new IllegalStateException("SignConversations doesn't support " + VERSION + " version");
+	private static IllegalStateException notSupported(String className) {
+		return new IllegalStateException("SignConversations doesn't support " + VERSION + " version: " + className);
 	}
 
 }
