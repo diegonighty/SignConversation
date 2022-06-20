@@ -2,6 +2,7 @@ package com.github.diegonighty.sign.core.v1_18_R1;
 
 import com.github.diegonighty.sign.api.conversation.SignConversation;
 import com.github.diegonighty.sign.core.AbstractSignService;
+import com.github.diegonighty.sign.core.BukkitExecutor.BukkitExecutorProvider;
 import com.github.diegonighty.sign.core.packet.PacketInterceptor;
 import net.minecraft.network.protocol.game.PacketPlayInUpdateSign;
 import org.bukkit.entity.Player;
@@ -19,9 +20,12 @@ public class SignListener implements PacketInterceptor<PacketPlayInUpdateSign> {
 		SignConversation conversation = signService.getAndRemove(player);
 
 		if (conversation != null) {
-			conversation.callback()
-					.then(player, packet.c())
-					.response(player);
+			BukkitExecutorProvider.get()
+					.execute(() -> {
+						conversation.callback()
+								.then(player, packet.c())
+								.response(player);
+					});
 		}
 
 		return packet;
